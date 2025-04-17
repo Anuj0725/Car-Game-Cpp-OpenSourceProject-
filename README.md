@@ -120,3 +120,8 @@ score: Current score.
 Art Assets:
 Player's car: Stored in car[4][4].
 Enemies: Rendered as **** and ** patterns.
+
+![image alt](https://ibb.co/21Fz8RDg)
+![image alt](https://ibb.co/zVj3Qkdn)
+![image alt](https://ibb.co/DHsQf5Zd)
+![image alt](https://ibb.co/wrjz4hYs)
