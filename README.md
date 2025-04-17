@@ -1,60 +1,122 @@
-<p align="center">
-  <img src="https://media.giphy.com/media/3o6Zt0bTxU4tHbW2Kk/giphy.gif" width="200px">
-</p> 
-<p align="center">
+Car Game in C++
+Overview
+This is a simple console-based Car Game implemented in C++. The player controls a car using keyboard inputs, avoiding oncoming enemies (other cars) to score points. The game features a dynamic score system, enemy generation, collision detection, and a menu-driven interface.
 
-  # Car Racing Game Using C++🚦🏎️🕹️
-</p>
-  
-## 	🌱History of Car Racing Game :-
-The earliest mechanical racing arcade game dates back to 1900, when the London-based Automatic Sports Company manufactured a mechanical yacht racing game, Yacht Racer. Mechanical car driving games later originated from British amusement arcades in the 1930s.🚗🚗
+Features
+Dynamic Enemies: Randomly generated enemy cars moving towards the player.
 
-## 🌍 Language Used :- C++
-One go-to programming language commonly used by developers all over the world is C++. In fact, most video games, embedded systems, IoT devices, or resource-heavy AI applications run on C++. With so many uses of C++, it is recommended as one of the best languages to learn.	🧑‍🚀
+Score Tracking: Points increase as enemies are avoided.
 
-## 🧩 In this Project we used `dos` , `windows` and `time` Header file to implement the code
+Collision Detection: Game over when the player's car collides with an enemy.
 
-## Features
+Menu System: Start game, view instructions, or quit.
 
+Console-Based Graphics: Uses ASCII characters for rendering.
 
-- Gaming Menu Bar
-- Ontime Keyboard Response
-- Game Over messege and Restart option
+How to Play
+Objective: Avoid incoming enemy cars to increase your score.
 
-### 🪄ScreenShots :- 
+Controls:
 
-<p align="center">
-  <img src="https://github.com/TridibD004/Car-Game-Cpp/blob/main/src/Screenshot%20(41).png" width="400" height="200">
-  <img src="https://github.com/TridibD004/Car-Game-Cpp/blob/main/src/Screenshot%20(43).png" width="400" height="200">
-</p>
-<p align="center">
-  <img src="https://github.com/TridibD004/Car-Game-Cpp/blob/main/src/Screenshot%20(42).png" width="400" height="200">
-</p> 
+A or a: Move the car left.
 
-## 🔮Output Demo 
+D or d: Move the car right.
 
-<p align="center">
-  <img src="https://github.com/TridibD004/Car-Game-Cpp/blob/main/src/output.gif">
-</p> 
+ESC: Exit the game mid-session.
 
+Game Over: Colliding with an enemy ends the game. Press any key to return to the menu.
 
-## Deployment
+Functions Explanation
+1. gotoxy(int x, int y)
+Purpose: Moves the console cursor to specified coordinates (x, y).
 
-To deploy this project 
+Usage: Essential for positioning text and game elements.
 
-```bash
-Copy the code to any Compiler then run
-```
+2. setcursor(bool visible, DWORD size)
+Purpose: Controls cursor visibility and size.
 
-#### Please Give a 🌟 if you Like
+Usage: Hides the cursor during gameplay for a cleaner look.
 
-###                 Happy Coding  💟
+3. drawBorder()
+Purpose: Draws the game's borders using + characters.
 
-## Contributors :-
+Details: Creates left, right, and outer boundaries.
 
+4. genEnemy(int ind)
+Purpose: Generates a random X-coordinate for enemy ind.
 
-<!-- Copy-paste in your Readme.md file -->
+Range: Enemies spawn between columns 17 and 49.
 
-<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=TridibD004/Car-Game-Cpp"/>
-</a>
+5. drawEnemy(int ind) & eraseEnemy(int ind)
+Purpose: Renders or removes an enemy car using ASCII art.
+
+Condition: Only active enemies (flagged) are drawn.
+
+6. resetEnemy(int ind)
+Purpose: Resets enemy ind to the top of the screen with a new position.
+
+Trigger: Called when an enemy exits the screen.
+
+7. drawCar() & eraseCar()
+Purpose: Draws or erases the player's car using the car[][] array.
+
+Design: The car is a 4x4 ASCII art using + characters.
+
+8. collision()
+Purpose: Checks if the player's car collides with an enemy.
+
+Logic: Compares enemy and car positions when enemies are near the bottom.
+
+9. gameover()
+Purpose: Displays a "Game Over" screen and returns to the menu.
+
+Trigger: Called on collision detection.
+
+10. updateScore()
+Purpose: Updates and displays the current score on the right panel.
+
+11. instructions()
+Purpose: Shows game controls and rules.
+
+12. play()
+Purpose: Main game loop.
+
+Handles player input (movement).
+
+Manages enemy movement and spawning.
+
+Updates the score and checks for collisions.
+
+Runs at a fixed delay (Sleep(50)) for smooth gameplay.
+
+13. main()
+Purpose: Entry point with a menu system.
+
+Options: Start Game, Instructions, Quit.
+
+Uses getch() for menu navigation.
+
+Compilation and Execution
+Requirements:
+Windows OS: Uses Windows-specific headers (windows.h, dos.h).
+
+Compiler: Compatible with C++11 or newer (e.g., Code::Blocks, Dev-C++).
+
+Steps:
+Compile:
+
+Run:
+Copy
+car_game.exe
+Code Structure
+Global Variables:
+
+enemyY[], enemyX[]: Track enemy positions.
+
+enemyFlag[]: Flags to activate enemies.
+
+carPos: Player's car X-coordinate.
+score: Current score.
+Art Assets:
+Player's car: Stored in car[4][4].
+Enemies: Rendered as **** and ** patterns.
